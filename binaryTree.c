@@ -106,11 +106,11 @@ static void replaceNode( NODE * nodeToReplace, NODE * newNode )
 {
     if ( nodeToReplace->parent )
     {
-        if ( nodeToReplace->value == nodeToReplace->parent->left->value )
+        if ( nodeToReplace->parent->left && nodeToReplace->value == nodeToReplace->parent->left->value )
         {
             nodeToReplace->parent->left = newNode;
         }
-        else if ( nodeToReplace->value == nodeToReplace->parent->right->value )
+        else if ( nodeToReplace->parent->right && nodeToReplace->value == nodeToReplace->parent->right->value )
         {
             nodeToReplace->parent->right = newNode;
         }
